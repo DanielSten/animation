@@ -1,0 +1,219 @@
+/*Обнуление*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*--------------------*/
+
+
+.flex{
+    display: flex;
+}
+.content{
+    height: 768px;
+    width: 1024px;
+    margin: 0 auto;
+    position: relative;
+}
+.block_background_photo_day{
+    height: 100%;
+}
+.daytime{
+    background: url('../img/dayTime.png') 0 0/auto 100% no-repeat;
+}
+.nighttime{
+    background: url('../img/nightTime.png') 0 0/auto 100% no-repeat;
+}
+
+@keyframes animBlockFly{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-40%);
+        opacity: 0;
+    }
+    
+}      
+.blocks_fly_top{
+    font-size: 35px;
+    font-family: Roboto;
+    text-align: center;
+    height: 100%;
+    align-items:center;
+    font-weight: 500;
+    padding-top: 150px;
+    position: relative;
+    animation: animBlockFly;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+.block_left_fly{
+    text-transform: uppercase;
+    flex-basis: 50%;
+}
+.block_right_fly{
+    color: rgb(0, 0, 126);
+    flex-basis: 50%;
+
+}
+.atoris_lighthouse{
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 600px;
+    background: url('../img/AtorisLighthouseDay.png') 0 0/1024px 768px no-repeat;
+    background-position: bottom;
+}
+.sun_pulse{
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: url('../img/sun_pulse.png') 0 0/1024px 768px no-repeat;
+}
+
+.cloud {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.cloud img {
+    width: 100%;
+    position: absolute;
+    -webkit-user-select: none; 
+    -moz-user-select: none;   
+    -ms-user-select: none;
+    user-select: none;    
+    pointer-events: none;
+}
+@-webkit-keyframes animCloud {
+    from {
+        -webkit-transform: translateX(-100%)
+    }
+    to {
+        -webkit-transform: translateX(100%)
+    }
+}
+@-moz-keyframes animCloud {
+    from {
+        -moz-transform: translateX(-100%)
+    }
+    to {
+        -moz-transform: translateX(100%)
+    }
+}
+@keyframes animCloud {
+    from {
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+        transform: translateX(-100%)
+    }
+    to {
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        transform: translateX(100%)
+    }
+}
+.cloudRun {
+    -webkit-animation: animCloud 60s infinite linear;
+    -moz-animation: animCloud 60s infinite linear;
+    animation: animCloud 60s infinite linear;
+}
+
+.block_lighthouse_text_order{
+    flex-direction:column;
+    position: absolute;
+    bottom: 9%;
+    right: 16%;
+    z-index: 5;
+}
+.block_lighthouse_text{
+    margin: 5px 0;
+}
+.block_lighthouse_text_thick{
+    font-family: "DIN Pro";
+    font-size: 18px;
+    color: rgb( 0, 93, 168 );
+    line-height: 0.9;
+    text-align: center;
+    margin-top: 10px;
+}
+.block_lighthouse_text_thin{
+    color: rgba(0, 92, 168, 0.747);
+    font-size: 15px;
+}
+.block_lighthouse_text_1{
+    order: 6;
+}
+.block_lighthouse_text_1 .block_lighthouse_text_img{
+    background: url('../img/icon_1.png') 0 0/ 75px 22px  no-repeat;
+    height: 22px;
+}
+.block_lighthouse_text_2{
+    order: 5;
+}
+.block_lighthouse_text_2 .block_lighthouse_text_img{
+    background: url('../img/icon_2.png') 0 0/35px 35px no-repeat;
+    height: 35px;
+}
+.block_lighthouse_text_3{
+    order: 4;
+}
+.block_lighthouse_text_3 .block_lighthouse_text_img{
+    background: url('../img/icon_3.png') 0 0/35px 35px no-repeat;
+    height: 35px;
+}
+.block_lighthouse_text_4{
+    order: 3;
+}
+.block_lighthouse_text_4 .block_lighthouse_text_img{
+    background: url('../img/icon_4.png') 0 0/35px 35px no-repeat;
+    height: 35px;
+}
+.block_lighthouse_text_5{
+    order: 2;
+}
+.block_lighthouse_text_5 .block_lighthouse_text_img{
+    background: url('../img/icon_5.png') 0 0/35px 35px no-repeat;
+    height: 35px;
+}
+.block_lighthouse_text_6{
+    order: 1;
+}
+.block_lighthouse_text_6 .block_lighthouse_text_img{
+    background: url('../img/icon_6.png') 0 0/35px 35px no-repeat;
+    height: 35px;
+}
+.block_lighthouse_text_img{
+    width: 35px;
+    margin: 0 auto;
+}
+.block_lighthouse_text_img_kraa{
+    width: 75px;
+}
