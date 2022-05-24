@@ -29,23 +29,36 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 .block_background_photo_day{
     height: 100%;
 }
-.daytime{
+.day_time{
     background: url('../img/dayTime.png') 0 0/auto 100% no-repeat;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
-.nighttime{
+.night_time{
+    height: 100%;
     background: url('../img/nightTime.png') 0 0/auto 100% no-repeat;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    animation: nightTime;
+    animation-delay: 25s;
+    animation-duration: 4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
-
-@keyframes animBlockFly{
-    from{
-        transform: translateY(0);
-    }
-    to{
-        transform: translateY(-40%);
+@keyframes nightTime {
+    0%{
         opacity: 0;
     }
-    
-}      
+    100%{
+        opacity: 1;
+    }
+}
+
+   
 .blocks_fly_top{
     font-size: 35px;
     font-family: Roboto;
@@ -60,7 +73,16 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     animation-delay: 2s;
     animation-fill-mode: forwards;
 }
-
+@keyframes animBlockFly{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-40%);
+        opacity: 0;
+    }
+    
+}   
 .block_left_fly{
     text-transform: uppercase;
     flex-basis: 50%;
@@ -77,9 +99,33 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     bottom: 0;
     left: 0;
     right: 0;
-    height: 600px;
+    height: 145px;
     background: url('../img/AtorisLighthouseDay.png') 0 0/1024px 768px no-repeat;
     background-position: bottom;
+    animation: atorisUp;
+    animation-delay: 6s;
+    animation-duration: 18s;
+    animation-fill-mode: forwards;
+}
+@keyframes atorisUp{
+    0%{
+        height: 145px;
+    }
+    20%{
+        height: 225px;
+    }
+    40%{
+        height: 320px;
+    }
+    60%{
+        height: 410px;
+    }
+    80%{
+        height: 490px;
+    }
+    100%{
+        height: 100%;
+    }
 }
 .sun_pulse{
     height: 100%;
@@ -87,9 +133,30 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     left: 0;
     right: 0;
     position: absolute;
-    background: url('../img/sun_pulse.png') 0 0/1024px 768px no-repeat;
+    background: url('../img/sun_rotation.png') 0 0/1024px 768px no-repeat;
+    animation: sunPulse;
+    animation-duration: 40s;
+    animation-fill-mode: forwards;
 }
-
+@keyframes sunPulse {
+    0%{
+        transform-origin: 1px 1px;
+	    transform: rotate(-3deg);
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 0;
+    }
+    100%{
+        transform-origin: 30px 30px;
+	    transform: rotate(5deg);
+        opacity: 0;
+    }
+    
+}
 .cloud {
     overflow: hidden;
     position: absolute;
@@ -145,7 +212,29 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
     -moz-animation: animCloud 60s infinite linear;
     animation: animCloud 60s infinite linear;
 }
-
+.block_text_left{
+    position: absolute;
+    font-family: "DIN Pro";
+    font-size: 18px;
+    color: black;
+    line-height: 0.9;
+    text-align: center;
+    bottom: 11%;
+    left: 15%;
+    animation: blockTextLeft;
+    animation-delay: 4s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes blockTextLeft {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 .block_lighthouse_text_order{
     flex-direction:column;
     position: absolute;
@@ -170,6 +259,19 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 }
 .block_lighthouse_text_1{
     order: 6;
+    opacity: 0;
+    animation: lightHouseText1;
+    animation-delay: 4s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes lightHouseText1 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 .block_lighthouse_text_1 .block_lighthouse_text_img{
     background: url('../img/icon_1.png') 0 0/ 75px 22px  no-repeat;
@@ -177,6 +279,19 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 }
 .block_lighthouse_text_2{
     order: 5;
+    opacity: 0;
+    animation: lightHouseText2;
+    animation-delay: 8s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes lightHouseText2 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 .block_lighthouse_text_2 .block_lighthouse_text_img{
     background: url('../img/icon_2.png') 0 0/35px 35px no-repeat;
@@ -184,6 +299,19 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 }
 .block_lighthouse_text_3{
     order: 4;
+    opacity: 0;
+    animation: lightHouseText3;
+    animation-delay: 11s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes lightHouseText3 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 .block_lighthouse_text_3 .block_lighthouse_text_img{
     background: url('../img/icon_3.png') 0 0/35px 35px no-repeat;
@@ -191,6 +319,19 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 }
 .block_lighthouse_text_4{
     order: 3;
+    opacity: 0;
+    animation: lightHouseText4;
+    animation-delay: 14s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes lightHouseText4 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 .block_lighthouse_text_4 .block_lighthouse_text_img{
     background: url('../img/icon_4.png') 0 0/35px 35px no-repeat;
@@ -198,6 +339,19 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 }
 .block_lighthouse_text_5{
     order: 2;
+    opacity: 0;
+    animation: lightHouseText5;
+    animation-delay: 18s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes lightHouseText5 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 .block_lighthouse_text_5 .block_lighthouse_text_img{
     background: url('../img/icon_5.png') 0 0/35px 35px no-repeat;
@@ -205,6 +359,19 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 }
 .block_lighthouse_text_6{
     order: 1;
+    opacity: 0;
+    animation: lightHouseText6;
+    animation-delay: 21s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes lightHouseText6 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 .block_lighthouse_text_6 .block_lighthouse_text_img{
     background: url('../img/icon_6.png') 0 0/35px 35px no-repeat;
@@ -216,4 +383,113 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 }
 .block_lighthouse_text_img_kraa{
     width: 75px;
+}
+.atoris_lighthouse_night{
+    height: 100%;
+    background: url('../img/AtorisLightHouseNight.png') 0 0/auto 100% no-repeat;
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    animation: atorisLighthouseNight;
+    animation-delay: 25s;
+    animation-duration: 4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+@keyframes atorisLighthouseNight {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.left_light{
+    height: 100%;
+    background: url('../img/leftLight.png') 0 0/auto 100% no-repeat;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    animation: leftLight;
+    animation-delay: 26s;
+    animation-duration: 10s;
+    opacity: 0;
+    animation-iteration-count: infinite;
+}
+@keyframes leftLight {
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.right_light{
+    height: 100%;
+    background: url('../img/rightLight.png') 0 0/auto 100% no-repeat;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    animation: rightLight;
+    animation-delay: 26s;
+    animation-duration: 10s;
+    opacity: 0;
+    animation-iteration-count: infinite;
+}
+@keyframes rightLight {
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.glow_light{
+    height: 100%;
+    background: url('../img/lightHouseGlow.png') 0 0/auto 100% no-repeat;
+    animation: glowLight;
+    z-index: 6;
+    animation-delay: 25s;
+    animation-duration: 4s;
+    opacity: 0;
+    animation-iteration-count: infinite;
+}
+@keyframes glowLight {
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }
